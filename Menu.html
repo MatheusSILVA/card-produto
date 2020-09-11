@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html long="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="Estilo.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+	<div class="cartao-produto">
+		<h3>tênis para caminhada - feminino</h3>
+		<p>Seu conforto garantido com baixo custo benefício!!</p>
+		
+        <div class="pic-produto"></div>
+        <div class="cor-produto">
+        	<span class="azul ativado" data-color="#0c2461" data-pic="url(azul.png)"></span>
+        	<span class="violeta ativado" data-color="#b71540" data-pic="url(roxo.png)"></span>
+        	<span class="cinza ativado" data-color="#bdc3c7" data-pic="url(cinza.png)"></span>
+        </div>
+
+        <div class="informacao-produto">
+        	<div class="preco-produto">R$75,90</div>
+        	<a href="#" class="botao-produto">COMPRAR</a>
+        	<a href="#" class="botao-carrinho">CARRINHO</a>
+        </div>		
+	</div>
+
+	<script>
+		$(".cor-produto span").click(function(){
+			$(".cor-produto span").removeClass("ativado");
+			$(this).addClass("ativado");
+			$("body").css("background", $(this).attr("data-color"));
+			$(".preco-produto").css("color", $(this).attr("data-color"));
+			$(".botao-produto").css("color", $(this).attr("data-color"));
+			$(".pic-produto").css("background-image", $(this).attr("data-pic"));
+			$(".botao-carrinho").css("color", $(this).attr("data-color"));
+		});
+	</script>
+</body>
+</html>
